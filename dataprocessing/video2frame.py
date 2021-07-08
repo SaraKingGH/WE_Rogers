@@ -35,9 +35,8 @@ def frames_to_video(inputdir: Path, save_rate: int):
             if count % save_rate == 0:
                 cv2.imwrite(str(current_output / "frame{:d}.jpg".format(count)), image)
                 save_count += 1
-                print(save_count)
+                logger.info(f'frame {count} is saved!')
             count += 1
-        break
 
 
 if __name__ == "__main__":
@@ -50,8 +49,3 @@ if __name__ == "__main__":
     args.fsr = 100
     frames_to_video(args.pathIn, args.fsr)
 
-# -
-
-# ! jupytext --set-formats ipynb,py video2frame.ipynb
-
-# ! autopep8 --in-place --aggressive --aggressive video2frame.py
