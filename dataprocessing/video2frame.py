@@ -14,8 +14,8 @@ if __name__ == "__main__":
     a.add_argument("--fnumber", help="frame number for saving")
     a.add_argument("--ftime", help="time length for capturing the image (seconds)")
     args = a.parse_args()
-    args.pathIn = Path('../hockeyTrackingDataset/clips/CAR_VS_BOS_2019')
-    args.save_method = 1
+    args.pathIn = Path('../RogersDataset')
+    args.save_method = 0
     args.fnumber = 100
     args.ftime = 20
     if args.save_method:
