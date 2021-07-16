@@ -69,7 +69,7 @@ def videos2frames_frame_number(inputdir: Path, frame_number: int):
         fcnt = vidcap.get(cv2.CAP_PROP_FRAME_COUNT)
         logger.info(f'framerate:, {fps}')
         logger.info(f'framecount:, {fcnt}')
-        logger.info(f'video duration:, {fps/fcnt}')
+        logger.info(f'video duration:, {fcnt/fps}')
         count = 0
         save_count = 0
         while True:
