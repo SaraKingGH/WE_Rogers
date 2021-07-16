@@ -37,7 +37,7 @@ def videos2frames_time(inputdir: Path, frame_length: int):
         fcnt = vidcap.get(cv2.CAP_PROP_FRAME_COUNT)
         logger.info(f'framerate:, {fps}')
         logger.info(f'framecount:, {fcnt}')
-        logger.info(f'video duration:, {fps/fcnt}')
+        logger.info(f'video duration (seconds):, {fcnt/fps}')
         sec = 0
         count = 0
         success = getFrame(vidcap, sec, current_output, count)
