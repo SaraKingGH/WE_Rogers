@@ -2,22 +2,23 @@
 
 *.DS_Store
 
+
 data/Object Detection Results/*
-data/Original Frames/*
+data/Original Videos/*
 data/Original Frames/*
 data/Reconstructed Videos/*
 
 !data/.gitkeep
 !data/Object Detection Results/.gitkeep
-!data/Original Frames/.gitkeep
+!data/Original Videos/.gitkeep
 !data/Original Frames/.gitkeep
 !data/Reconstructed Videos/.gitkeep
 
 
 # To encourage best practices, we're ignoring some common data/output types that are being dumped into git repo's
 *.png
-*.jpg
-*.mp4
+#*.jpg
+#*.mp4
 *.ipynb
 *.csv
 *.tsv
