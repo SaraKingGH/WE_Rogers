@@ -2,11 +2,11 @@
 
 *.DS_Store
 
-!data/.gitkeep
-!data/Object Detection Results/.gitkeep
-!data/Original Videos/.gitkeep
-!data/Original Frames/.gitkeep
-!data/Reconstructed Videos/.gitkeep
+!data/
+!data/Object Detection Results/
+!data/Original Videos/
+!data/Original Frames/
+!data/Reconstructed Videos/
 
 data/Object Detection Results/*
 data/Original Videos/*
