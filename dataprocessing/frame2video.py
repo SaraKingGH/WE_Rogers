@@ -13,7 +13,7 @@ if __name__ == "__main__":
     a.add_argument("--pathOut", help="folder for saving the output vide.")
     a.add_argument("--fps", help="frame per second")
     args = a.parse_args()
-    args.pathIn = Path('../hockeyTrackingDataset/clips/CAR_VS_BOS_2019/001')
-    args.pathOut = Path('../hockeyTrackingDataset/clips/CAR_VS_BOS_2019/')
+    args.pathIn = Path('../RogersDataset/NHL COL LA 2021JAN21 MPLS210629-230202/')
+    args.pathOut = Path('../RogersDataset/Reconstructed_video/')
     args.fps = 10
     frame2video_convertor(args.pathIn, args.pathOut, args.fps)
