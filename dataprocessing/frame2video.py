@@ -9,8 +9,8 @@ from data_utils import frame2video_convertor
 if __name__ == "__main__":
     logger.info(f"breaking the video to frames and save the results")
     a = argparse.ArgumentParser()
-    a.add_argument("--pathIn", help="path to video folder")
-    a.add_argument("--pathOut", help="saving the video frames based on the number: 0 or based on the frame length (time): 1")
+    a.add_argument("--pathIn", help="path to the image folder")
+    a.add_argument("--pathOut", help="folder for saving the output vide.")
     a.add_argument("--fps", help="frame per second")
     args = a.parse_args()
     args.pathIn = Path('../hockeyTrackingDataset/clips/CAR_VS_BOS_2019/001')
