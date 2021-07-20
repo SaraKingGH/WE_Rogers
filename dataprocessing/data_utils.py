@@ -6,15 +6,18 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 
-def videos2frames_frame_number(inputdir: Path, frame_number: int):
+def videos2frames_frame_number(inputdir: Path, outputdir: Path, frame_number: int):
     """
     convert video to frames based on the requested number of frames.
     """
     assert inputdir.is_dir()
+    if not outputdir.is_dir():
+        outputdir.mkdir(parents=True, exist_ok=False)
+
     files = list(x for x in inputdir.iterdir() if x.is_file() and x.suffix == '.mp4')
     logger.info(f'list of video files are: {files}')
     for i in range(len(files)):
-        current_output = Path(inputdir) / Path(Path(files[i]).name).stem
+        current_output = outputdir / Path(Path(files[i]).name).stem
         logger.info(f'ouputput folder for frames is: {current_output}')
         try:
             os.mkdir(current_output)
@@ -25,7 +28,7 @@ def videos2frames_frame_number(inputdir: Path, frame_number: int):
         fps = vidcap.get(cv2.CAP_PROP_FPS)
         fcnt = vidcap.get(cv2.CAP_PROP_FRAME_COUNT)
         logger.info(f'framerate:, {fps}')
-        logger.info(f'framecount:, {fcnt}')
+        logger.info(f'frame count:, {fcnt}')
         logger.info(f'video duration:, {fcnt/fps}')
         count = 0
         save_count = 0
@@ -50,10 +53,9 @@ def frame2video_convertor(pathIn: Path, pathOut: Path, fps: int):
     files.sort()
     frame_array = []
 
-    # check if the output foler exist
+    assert pathIn.is_dir()
     if not pathOut.is_dir():
         pathOut.mkdir(parents=True, exist_ok=False)
-
     final_video_name = pathOut / Path('rec_' + pathIn.name + '.mp4')
     logger.info(f'final video file name is:, {final_video_name}')
     for i in range(len(files)):
