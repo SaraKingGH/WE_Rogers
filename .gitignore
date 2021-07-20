@@ -6,7 +6,7 @@
 *.jpg
 *.ipynb
 
-!data/Object Detection Results/
-!data/Original Frames/
-!data/Original Frames/
-!data/Reconstructed Videos/
+!data/Object Detection Results/.gitkeep
+!data/Original Frames/.gitkeep
+!data/Original Frames/.gitkeep
+!data/Reconstructed Videos/.gitkeep
