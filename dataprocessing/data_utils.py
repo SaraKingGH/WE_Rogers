@@ -50,6 +50,10 @@ def frame2video_convertor(pathIn: Path, pathOut: Path, fps: int):
     files.sort()
     frame_array = []
 
+    # check if the output foler exist
+    if not pathOut.is_dir():
+        pathOut.mkdir(parents=True, exist_ok=False)
+
     final_video_name = pathOut / Path('rec_' + pathIn.name + '.mp4')
     logger.info(f'final video file name is:, {final_video_name}')
     for i in range(len(files)):
